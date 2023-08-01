@@ -1,0 +1,24 @@
+// 测试协议
+syntax = "proto3";
+package proto;
+
+message CS_chat {
+  string msg = 1;
+}
+
+message SC_chat {
+  string msg = 1;
+}
+
+
+message CS_mail {
+  string title = 1;
+  string content = 2;
+}
+
+message SC_mail {
+  string title = 1;
+  string content = 2;
+}
+
+

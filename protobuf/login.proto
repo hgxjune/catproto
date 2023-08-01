@@ -1,0 +1,37 @@
+// 测试协议
+syntax = "proto3";
+package proto;
+
+message CS_server_info {
+
+}
+
+message SC_server_info {
+  int32 server = 1;
+  int32 status = 2;
+  string open_date = 3;
+}
+
+message CS_user {
+  string uid = 1;
+}
+
+message SC_user {
+  message User {
+    int32 server = 1;
+    int64 rid = 2;
+  }
+  repeated User user = 1;
+}
+
+// 登录，没有角色自动创建
+message CS_login {
+  string uid = 1;
+  int32 server = 2;
+  string info = 3;            // 扩展数据
+  string sign = 4;            // sdk 验证
+}
+
+message SC_login {
+  int32 code = 1;             // 0 登陆成功
+}
